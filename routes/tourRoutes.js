@@ -30,6 +30,11 @@ router
 
 router.route("/distances/:latlng/unit/:unit").get(tourController.getDistances);
 
+router.route("/email/:password").get((req,res,next)=>{
+  console.log(req.params.password);
+  res.json({status:"S"})
+})
+
 router
   .route("/")
   .get(tourController.getAllTours)
